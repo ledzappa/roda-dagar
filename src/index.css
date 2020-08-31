@@ -1,0 +1,34 @@
+html {
+  font-size: 16px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.day-container.red {
+  background-color: #b71d1d;
+  color: #fff;
+}
+
+.day-container.gray {
+  background-color: #eee;
+  color: #000;
+}
+
+.date-box {
+  width: 5rem;
+  height: 5rem;
+}
+
+.date-name h2 {
+  line-height: 5rem;
+  white-space: nowrap;
+}
+
+@media only screen and (max-width: 400px) {
+  html {
+    font-size: 12px;
+  }
+}

@@ -2,9 +2,8 @@ html {
   font-size: 16px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-color: #d3d1d4 !important;
 }
 
 .day-container.red {
@@ -14,6 +13,11 @@ code {
 
 .day-container.gray {
   background-color: #eee;
+  color: #000;
+}
+
+.day-container.squeeze {
+  background-color: #f3f704;
   color: #000;
 }
 
@@ -29,6 +33,6 @@ code {
 
 @media only screen and (max-width: 400px) {
   html {
-    font-size: 12px;
+    font-size: 10px;
   }
 }

@@ -6,13 +6,17 @@ body {
   background-color: #d3d1d4 !important;
 }
 
+.day-container {
+  border: 1px solid #000;
+}
+
 .day-container.red {
-  background-color: #b71d1d;
+  background-color: #9a2828;
   color: #fff;
 }
 
 .day-container.gray {
-  background-color: #eee;
+  background-color: #ffcece;
   color: #000;
 }
 
@@ -24,6 +28,9 @@ body {
 .date-box {
   width: 5rem;
   height: 5rem;
+  background-color: #fff;
+  color: #000;
+  border-right: 1px solid #000;
 }
 
 .date-name h2 {
@@ -31,7 +38,21 @@ body {
   white-space: nowrap;
 }
 
-@media only screen and (max-width: 400px) {
+.day-name {
+  color: #000;
+  position: absolute;
+  right: 0;
+  width: 4rem;
+  text-align: center;
+  background-color: rgb(255 255 255 / 80%);
+  border-left: 1px solid;
+  border-bottom: 1px solid;
+  padding: 0.2rem;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 480px) {
   html {
     font-size: 10px;
   }

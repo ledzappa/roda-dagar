@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
 import './App.css';
-import { svDays, svMonthAbbr, staticDays } from './svDates';
+import { svDays, svMonthAbbr, getStaticDates } from './svDates';
 
 const oneDay = 86400000;
 
-const getSqueezeDays = (day) => {
+const getSqueezeDays = (day, dates) => {
   const weekDayNo = day.date.getDay();
   if (weekDayNo === 2 || weekDayNo === 4) {
     const d = new Date(
       day.date.getTime() + oneDay * (weekDayNo === 2 ? -1 : 1)
     );
     if (
-      staticDays.filter((day) => new Date(day.date).getTime() === d.getTime())
-        .length === 0
+      dates.filter(
+        (day) => new Date(day.date).getTime() === d.getTime()
+      ).length === 0
     ) {
       const squeezeDay = {
         date: d,
@@ -48,6 +49,7 @@ const getEasterBasedDays = (year) => {
 };
 
 const getMidsummerDays = (year) => {
+  // midsummers day is on a saturday 20-26 june
   for (let i = 20; i <= 26; i++) {
     const date = new Date(year + '-06-' + i);
     if (date.getDay() === 6) {
@@ -71,6 +73,11 @@ class App extends Component {
     super(props);
     this.state = {
       currentYear: new Date().getFullYear(),
+      dates: [
+        ...getStaticDates(new Date().getFullYear()),
+        ...getEasterBasedDays(new Date().getFullYear()),
+        ...getMidsummerDays(new Date().getFullYear()),
+      ],
     };
   }
 
@@ -78,13 +85,9 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Röda dagar</h1>
-        {[
-          ...staticDays,
-          ...getEasterBasedDays(this.state.currentYear),
-          ...getMidsummerDays(this.state.currentYear),
-        ]
+        {this.state.dates
           .sort((a, b) => a.date - b.date)
-          .reduce((prev, curr) => [...prev, ...getSqueezeDays(curr)], [])
+          .reduce((prev, curr) => [...prev, ...getSqueezeDays(curr, this.state.dates)], [])
           .map((day) => ({ ...day, dayName: svDays[day.date.getDay()] }))
           // .filter((day) => day.date > new Date())
           .map((day) => (

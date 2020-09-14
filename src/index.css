@@ -6,6 +6,10 @@ body {
   background-color: #efefef !important;
 }
 
+.header {
+  height: 8rem;
+}
+
 .year-container {
   border: 1px solid #000;
   background-color: #555;
@@ -13,6 +17,13 @@ body {
   font-size: 1.5rem;
   overflow: hidden;
   height: 3rem;
+  z-index: 1;
+}
+
+.year-container.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .year-container .year-btn {

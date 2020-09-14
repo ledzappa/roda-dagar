@@ -12,7 +12,8 @@ const getSqueezeDays = (day, dates) => {
     );
     if (
       dates.filter((day) => new Date(day.date).getTime() === d.getTime())
-        .length === 0 && d.getFullYear() === day.date.getFullYear()
+        .length === 0 &&
+      d.getFullYear() === day.date.getFullYear()
     ) {
       const squeezeDay = {
         date: d,
@@ -72,8 +73,30 @@ class App extends Component {
     super(props);
     this.state = {
       selectedYear: new Date().getFullYear(),
+      isSticky: false,
     };
-    this.changeYear = this.changeYear.bind(this);
+    this.myRef = React.createRef();
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', () => this.handleScroll(), {
+      passive: true,
+    });
+  }
+
+  handleScroll() {
+    const bcr = this.myRef.current.getBoundingClientRect();
+    if (!this.state.isSticky && bcr.y < 0) {
+      this.setState(() => ({
+        ...this.state,
+        isSticky: true,
+      }));
+    } else if (this.state.isSticky && window.scrollY < 56) {
+      this.setState(() => ({
+        ...this.state,
+        isSticky: false,
+      }));
+    }
   }
 
   getAllDates() {
@@ -99,45 +122,60 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Röda dagar</h1>
-        <div className="year-container mb-2">
-          <span
-            className="year-btn float-left"
-            onClick={() => this.changeYear(-1)}
-          >
-            &lt;
-          </span>
-          <h2 className="d-inline-block m-0">{this.state.selectedYear}</h2>
-          <span
-            className="year-btn float-right"
-            onClick={() => this.changeYear(1)}
-          >
-            &gt;
-          </span>
-        </div>
-        {this.getAllDates()
-          // .filter((day) => day.date > new Date())
-          .map((day) => (
+        <div className="row">
+          <div className="col-12 header p-0">
+            <h1>Röda dagar</h1>
             <div
               className={
-                'day-container d-flex position-relative mb-2 text-left ' +
-                (day.notReallyRed
-                  ? 'gray'
-                  : day.isSqueezeDay
-                  ? 'squeeze'
-                  : 'red')
+                'year-container' + (this.state.isSticky ? ' sticky' : '')
               }
+              ref={this.myRef}
             >
-              <div className="text-center date-box mr-2">
-                <h1 className="mb-0">{day.date?.getUTCDate()}</h1>
-                <h4>{svMonthAbbr[day.date.getMonth()]?.toUpperCase()}</h4>
-              </div>
-              <div className="date-name">
-                <h2 className="mb-0 pl-3">{day.name}</h2>
-              </div>
-              <div className="day-name">{day.dayName?.substr(0, 3)}</div>
+              <span
+                className="year-btn float-left"
+                onClick={() => this.changeYear(-1)}
+              >
+                &lt;
+              </span>
+              <h2 className="d-inline-block m-0">{this.state.selectedYear}</h2>
+              <span
+                className="year-btn float-right"
+                onClick={() => this.changeYear(1)}
+              >
+                &gt;
+              </span>
             </div>
-          ))}
+          </div>
+        </div>
+        <div className="container">
+          <div className="row">
+            <div className="col-12 p-0">
+              {this.getAllDates()
+                // .filter((day) => day.date > new Date())
+                .map((day) => (
+                  <div
+                    className={
+                      'day-container d-flex position-relative mb-2 text-left ' +
+                      (day.notReallyRed
+                        ? 'gray'
+                        : day.isSqueezeDay
+                        ? 'squeeze'
+                        : 'red')
+                    }
+                  >
+                    <div className="text-center date-box mr-2">
+                      <h1 className="mb-0">{day.date?.getUTCDate()}</h1>
+                      <h4>{svMonthAbbr[day.date.getMonth()]?.toUpperCase()}</h4>
+                    </div>
+                    <div className="date-name">
+                      <h2 className="mb-0 pl-3">{day.name}</h2>
+                    </div>
+                    <div className="day-name">{day.dayName?.substr(0, 3)}</div>
+                  </div>
+                ))}
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

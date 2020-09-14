@@ -137,7 +137,9 @@ class App extends Component {
               >
                 &lt;
               </span>
-              <h2 className="d-inline-block m-0">{this.state.selectedYear}</h2>
+              <div className="d-inline-block">
+                  {this.state.selectedYear} - {this.getAllDates().filter(date => date.isSqueezeDay).length} klämdagar
+              </div>
               <span
                 className="year-btn float-right"
                 onClick={() => this.changeYear(1)}

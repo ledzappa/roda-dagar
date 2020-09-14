@@ -33,7 +33,11 @@ const getEasterBasedDays = (year) => {
   const d = (19 * a + 24) % 30;
   const e = (2 * b + 4 * c + 6 * d + 5) % 7;
   const f = 22 + d + e;
-  const date = new Date(`${year}-${f <= 31 ? '03-' + f : '04-' + (f - 31)}`);
+  const date = new Date(
+    `${year}-${
+      f <= 31 ? '03-' + ('0' + f).slice(-2) : '04-' + ('0' + (f - 31)).slice(-2)
+    }`
+  );
 
   return [
     { name: 'Långfredagen', date: new Date(date.getTime() - oneDay * 2) },
@@ -138,7 +142,9 @@ class App extends Component {
                 &lt;
               </span>
               <div className="d-inline-block">
-                  {this.state.selectedYear} - {this.getAllDates().filter(date => date.isSqueezeDay).length} klämdagar
+                {this.state.selectedYear} -{' '}
+                {this.getAllDates().filter((date) => date.isSqueezeDay).length}{' '}
+                klämdagar
               </div>
               <span
                 className="year-btn float-right"

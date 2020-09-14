@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/roda-dagar/static/css/main.854a8a73.chunk.css",
-    "main.js": "/roda-dagar/static/js/main.6f264246.chunk.js",
-    "main.js.map": "/roda-dagar/static/js/main.6f264246.chunk.js.map",
+    "main.js": "/roda-dagar/static/js/main.2aca43bf.chunk.js",
+    "main.js.map": "/roda-dagar/static/js/main.2aca43bf.chunk.js.map",
     "runtime-main.js": "/roda-dagar/static/js/runtime-main.1cc78bcd.js",
     "runtime-main.js.map": "/roda-dagar/static/js/runtime-main.1cc78bcd.js.map",
     "static/css/2.d9ad5f5c.chunk.css": "/roda-dagar/static/css/2.d9ad5f5c.chunk.css",
     "static/js/2.4de91a93.chunk.js": "/roda-dagar/static/js/2.4de91a93.chunk.js",
     "static/js/2.4de91a93.chunk.js.map": "/roda-dagar/static/js/2.4de91a93.chunk.js.map",
     "index.html": "/roda-dagar/index.html",
-    "precache-manifest.bfadaeaf190e938c6e5fd2d1cfcbd7fb.js": "/roda-dagar/precache-manifest.bfadaeaf190e938c6e5fd2d1cfcbd7fb.js",
+    "precache-manifest.6d349216c6729c1f049cce144a7e8497.js": "/roda-dagar/precache-manifest.6d349216c6729c1f049cce144a7e8497.js",
     "service-worker.js": "/roda-dagar/service-worker.js",
     "static/css/2.d9ad5f5c.chunk.css.map": "/roda-dagar/static/css/2.d9ad5f5c.chunk.css.map",
     "static/css/main.854a8a73.chunk.css.map": "/roda-dagar/static/css/main.854a8a73.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.d9ad5f5c.chunk.css",
     "static/js/2.4de91a93.chunk.js",
     "static/css/main.854a8a73.chunk.css",
-    "static/js/main.6f264246.chunk.js"
+    "static/js/main.2aca43bf.chunk.js"
   ]
 }

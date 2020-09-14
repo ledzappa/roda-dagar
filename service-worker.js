@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/roda-dagar/precache-manifest.bfadaeaf190e938c6e5fd2d1cfcbd7fb.js"
+  "/roda-dagar/precache-manifest.6d349216c6729c1f049cce144a7e8497.js"
 );
 
 self.addEventListener('message', (event) => {

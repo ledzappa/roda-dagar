@@ -11,9 +11,8 @@ const getSqueezeDays = (day, dates) => {
       day.date.getTime() + oneDay * (weekDayNo === 2 ? -1 : 1)
     );
     if (
-      dates.filter(
-        (day) => new Date(day.date).getTime() === d.getTime()
-      ).length === 0
+      dates.filter((day) => new Date(day.date).getTime() === d.getTime())
+        .length === 0 && d.getFullYear() === day.date.getFullYear()
     ) {
       const squeezeDay = {
         date: d,
@@ -72,23 +71,51 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentYear: new Date().getFullYear(),
-      dates: [
-        ...getStaticDates(new Date().getFullYear()),
-        ...getEasterBasedDays(new Date().getFullYear()),
-        ...getMidsummerDays(new Date().getFullYear()),
-      ],
+      selectedYear: new Date().getFullYear(),
     };
+    this.changeYear = this.changeYear.bind(this);
+  }
+
+  getAllDates() {
+    const dates = [
+      ...getStaticDates(this.state.selectedYear),
+      ...getEasterBasedDays(this.state.selectedYear),
+      ...getMidsummerDays(this.state.selectedYear),
+    ];
+
+    return dates
+      .reduce((prev, curr) => [...prev, ...getSqueezeDays(curr, dates)], [])
+      .sort((a, b) => a.date - b.date)
+      .map((day) => ({ ...day, dayName: svDays[day.date.getDay()] }));
+  }
+
+  changeYear(change) {
+    this.setState((state) => ({
+      ...this.state,
+      selectedYear: state.selectedYear + change,
+    }));
   }
 
   render() {
     return (
       <div className="App">
         <h1>Röda dagar</h1>
-        {this.state.dates
-          .sort((a, b) => a.date - b.date)
-          .reduce((prev, curr) => [...prev, ...getSqueezeDays(curr, this.state.dates)], [])
-          .map((day) => ({ ...day, dayName: svDays[day.date.getDay()] }))
+        <div className="year-container mb-2">
+          <span
+            className="year-btn float-left"
+            onClick={() => this.changeYear(-1)}
+          >
+            &lt;
+          </span>
+          <h2 className="d-inline-block m-0">{this.state.selectedYear}</h2>
+          <span
+            className="year-btn float-right"
+            onClick={() => this.changeYear(1)}
+          >
+            &gt;
+          </span>
+        </div>
+        {this.getAllDates()
           // .filter((day) => day.date > new Date())
           .map((day) => (
             <div

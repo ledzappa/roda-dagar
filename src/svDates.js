@@ -57,4 +57,9 @@ export const getStaticDates = (year) => [
     date: new Date(year + '-12-26'),
     name: 'Annandag jul',
   },
+  {
+    date: new Date(year + '-12-31'),
+    name: 'Nyårsafton',
+    notReallyRed: true,
+  },
 ];

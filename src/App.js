@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 import { svDays, svMonthAbbr, getStaticDates } from './svDates';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faChevronLeft,
+  faChevronRight,
+} from '@fortawesome/free-solid-svg-icons';
 
 const oneDay = 86400000;
 
@@ -139,9 +144,9 @@ class App extends Component {
                 className="year-btn float-left"
                 onClick={() => this.changeYear(-1)}
               >
-                &lt;
+                <FontAwesomeIcon icon={faChevronLeft}/>
               </span>
-              <div className="d-inline-block">
+              <div className="d-inline-block year">
                 {this.state.selectedYear} -{' '}
                 {this.getAllDates().filter((date) => date.isSqueezeDay).length}{' '}
                 klämdagar
@@ -150,7 +155,7 @@ class App extends Component {
                 className="year-btn float-right"
                 onClick={() => this.changeYear(1)}
               >
-                &gt;
+                <FontAwesomeIcon icon={faChevronRight}/>
               </span>
             </div>
           </div>

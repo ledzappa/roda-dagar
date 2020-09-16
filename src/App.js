@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { svDays, svMonthAbbr, getStaticDates } from './svDates';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faChevronLeft,
-  faChevronRight,
-} from '@fortawesome/free-solid-svg-icons';
+import Header from './components/Header';
 
 const oneDay = 86400000;
 
@@ -82,30 +78,7 @@ class App extends Component {
     super(props);
     this.state = {
       selectedYear: new Date().getFullYear(),
-      isSticky: false,
     };
-    this.myRef = React.createRef();
-  }
-
-  componentDidMount() {
-    window.addEventListener('scroll', () => this.handleScroll(), {
-      passive: true,
-    });
-  }
-
-  handleScroll() {
-    const bcr = this.myRef.current.getBoundingClientRect();
-    if (!this.state.isSticky && bcr.y < 0) {
-      this.setState(() => ({
-        ...this.state,
-        isSticky: true,
-      }));
-    } else if (this.state.isSticky && window.scrollY < 56) {
-      this.setState(() => ({
-        ...this.state,
-        isSticky: false,
-      }));
-    }
   }
 
   getAllDates() {
@@ -123,44 +96,20 @@ class App extends Component {
 
   changeYear(change) {
     this.setState((state) => ({
-      ...this.state,
       selectedYear: state.selectedYear + change,
     }));
   }
 
   render() {
-    const squeezeDays = this.getAllDates().filter((date) => date.isSqueezeDay)
-      .length;
     return (
       <div className="App">
-        <div className="row">
-          <div className="col-12 header p-0">
-            <h1>Röda dagar</h1>
-            <div
-              className={
-                'year-container' + (this.state.isSticky ? ' sticky' : '')
-              }
-              ref={this.myRef}
-            >
-              <span
-                className="year-btn float-left"
-                onClick={() => this.changeYear(-1)}
-              >
-                <FontAwesomeIcon icon={faChevronLeft} />
-              </span>
-              <div className="d-inline-block year">
-                {this.state.selectedYear} - {squeezeDays} klämdag
-                {squeezeDays > 1 ? 'ar' : ''}
-              </div>
-              <span
-                className="year-btn float-right"
-                onClick={() => this.changeYear(1)}
-              >
-                <FontAwesomeIcon icon={faChevronRight} />
-              </span>
-            </div>
-          </div>
-        </div>
+        <Header
+          squeezeDays={
+            this.getAllDates().filter((date) => date.isSqueezeDay).length
+          }
+          year={this.state.selectedYear}
+          changeYear={(change) => this.changeYear(change)}
+        ></Header>
         <div className="container">
           <div className="row">
             <div className="col-12 p-0">

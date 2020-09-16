@@ -129,6 +129,8 @@ class App extends Component {
   }
 
   render() {
+    const squeezeDays = this.getAllDates().filter((date) => date.isSqueezeDay)
+      .length;
     return (
       <div className="App">
         <div className="row">
@@ -144,18 +146,17 @@ class App extends Component {
                 className="year-btn float-left"
                 onClick={() => this.changeYear(-1)}
               >
-                <FontAwesomeIcon icon={faChevronLeft}/>
+                <FontAwesomeIcon icon={faChevronLeft} />
               </span>
               <div className="d-inline-block year">
-                {this.state.selectedYear} -{' '}
-                {this.getAllDates().filter((date) => date.isSqueezeDay).length}{' '}
-                klämdagar
+                {this.state.selectedYear} - {squeezeDays} klämdag
+                {squeezeDays > 1 ? 'ar' : ''}
               </div>
               <span
                 className="year-btn float-right"
                 onClick={() => this.changeYear(1)}
               >
-                <FontAwesomeIcon icon={faChevronRight}/>
+                <FontAwesomeIcon icon={faChevronRight} />
               </span>
             </div>
           </div>

@@ -9,35 +9,6 @@ body {
   font-family: 'Open Sans', sans-serif !important;
 }
 
-.year-container {
-  border: 1px solid #000;
-  background-color: #555;
-  color: #fff;
-  font-size: 1.5rem;
-  overflow: hidden;
-  height: 3rem;
-  z-index: 1;
-  text-align: center;
-}
-
-.year-container.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
-.year-container .year-btn {
-  cursor: pointer;
-  font-size: 1.5rem;
-  font-weight: bold;
-  padding: 0rem 1.5rem;
-  line-height: 2.8rem;
-}
-
-.year-container .year {
-  line-height: 3rem;
-}
-
 .day-container {
   border: 1px solid #000;
 }

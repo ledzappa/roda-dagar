@@ -42,12 +42,14 @@ class Header extends Component {
           <h1 className={styles.h1}>Röda dagar</h1>
           <div
             className={
-              'year-container' + (this.state.isSticky ? ' sticky' : '')
+              styles.yearContainer +
+              ' ' +
+              (this.state.isSticky ? styles.sticky : '')
             }
             ref={this.myRef}
           >
             <span
-              className="year-btn float-left"
+              className={styles.yearBtn + ' float-left'}
               onClick={() => this.props.changeYear(-1)}
             >
               <FontAwesomeIcon icon={faChevronLeft} />
@@ -57,7 +59,7 @@ class Header extends Component {
               {this.props.squeezeDays > 1 ? 'ar' : ''}
             </div>
             <span
-              className="year-btn float-right"
+              className={styles.yearBtn + ' float-right'}
               onClick={() => this.props.changeYear(1)}
             >
               <FontAwesomeIcon icon={faChevronRight} />

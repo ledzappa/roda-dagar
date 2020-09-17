@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/roda-dagar/static/css/main.45ba2832.chunk.css",
-    "main.js": "/roda-dagar/static/js/main.7d5caf0e.chunk.js",
-    "main.js.map": "/roda-dagar/static/js/main.7d5caf0e.chunk.js.map",
-    "runtime-main.js": "/roda-dagar/static/js/runtime-main.1cc78bcd.js",
-    "runtime-main.js.map": "/roda-dagar/static/js/runtime-main.1cc78bcd.js.map",
-    "static/css/2.d9ad5f5c.chunk.css": "/roda-dagar/static/css/2.d9ad5f5c.chunk.css",
-    "static/js/2.088cab0d.chunk.js": "/roda-dagar/static/js/2.088cab0d.chunk.js",
-    "static/js/2.088cab0d.chunk.js.map": "/roda-dagar/static/js/2.088cab0d.chunk.js.map",
-    "index.html": "/roda-dagar/index.html",
-    "precache-manifest.278fc804b99d11640dd147d3abd68146.js": "/roda-dagar/precache-manifest.278fc804b99d11640dd147d3abd68146.js",
-    "service-worker.js": "/roda-dagar/service-worker.js",
-    "static/css/2.d9ad5f5c.chunk.css.map": "/roda-dagar/static/css/2.d9ad5f5c.chunk.css.map",
-    "static/css/main.45ba2832.chunk.css.map": "/roda-dagar/static/css/main.45ba2832.chunk.css.map",
-    "static/js/2.088cab0d.chunk.js.LICENSE.txt": "/roda-dagar/static/js/2.088cab0d.chunk.js.LICENSE.txt"
+    "main.css": "/static/css/main.b91d2d9f.chunk.css",
+    "main.js": "/static/js/main.d6244407.chunk.js",
+    "main.js.map": "/static/js/main.d6244407.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.b7ce6dc8.js",
+    "runtime-main.js.map": "/static/js/runtime-main.b7ce6dc8.js.map",
+    "static/css/2.d9ad5f5c.chunk.css": "/static/css/2.d9ad5f5c.chunk.css",
+    "static/js/2.ae382308.chunk.js": "/static/js/2.ae382308.chunk.js",
+    "static/js/2.ae382308.chunk.js.map": "/static/js/2.ae382308.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.383780fe616f4ee443d205669b9deb09.js": "/precache-manifest.383780fe616f4ee443d205669b9deb09.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.d9ad5f5c.chunk.css.map": "/static/css/2.d9ad5f5c.chunk.css.map",
+    "static/css/main.b91d2d9f.chunk.css.map": "/static/css/main.b91d2d9f.chunk.css.map",
+    "static/js/2.ae382308.chunk.js.LICENSE.txt": "/static/js/2.ae382308.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.1cc78bcd.js",
+    "static/js/runtime-main.b7ce6dc8.js",
     "static/css/2.d9ad5f5c.chunk.css",
-    "static/js/2.088cab0d.chunk.js",
-    "static/css/main.45ba2832.chunk.css",
-    "static/js/main.7d5caf0e.chunk.js"
+    "static/js/2.ae382308.chunk.js",
+    "static/css/main.b91d2d9f.chunk.css",
+    "static/js/main.d6244407.chunk.js"
   ]
 }

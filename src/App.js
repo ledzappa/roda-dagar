@@ -110,7 +110,7 @@ class App extends Component {
           year={this.state.selectedYear}
           changeYear={(change) => this.changeYear(change)}
         ></Header>
-        <div className="container">
+        <div className="container pt-4">
           <div className="row">
             <div className="col-12 p-0">
               {this.getAllDates()

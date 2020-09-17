@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './../App.css';
+import styles from './Header.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faChevronLeft,
@@ -38,8 +38,8 @@ class Header extends Component {
   render() {
     return (
       <div className="row">
-        <div className="col-12 header p-0">
-          <h1>Röda dagar</h1>
+        <div className={styles.header + ' col-12 header p-0'}>
+          <h1 className={styles.h1}>Röda dagar</h1>
           <div
             className={
               'year-container' + (this.state.isSticky ? ' sticky' : '')

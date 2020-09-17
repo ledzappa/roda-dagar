@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/roda-dagar/static/css/main.ec029080.chunk.css",
-    "main.js": "/roda-dagar/static/js/main.1295e83d.chunk.js",
-    "main.js.map": "/roda-dagar/static/js/main.1295e83d.chunk.js.map",
+    "main.css": "/roda-dagar/static/css/main.45ba2832.chunk.css",
+    "main.js": "/roda-dagar/static/js/main.7d5caf0e.chunk.js",
+    "main.js.map": "/roda-dagar/static/js/main.7d5caf0e.chunk.js.map",
     "runtime-main.js": "/roda-dagar/static/js/runtime-main.1cc78bcd.js",
     "runtime-main.js.map": "/roda-dagar/static/js/runtime-main.1cc78bcd.js.map",
     "static/css/2.d9ad5f5c.chunk.css": "/roda-dagar/static/css/2.d9ad5f5c.chunk.css",
-    "static/js/2.3386554b.chunk.js": "/roda-dagar/static/js/2.3386554b.chunk.js",
-    "static/js/2.3386554b.chunk.js.map": "/roda-dagar/static/js/2.3386554b.chunk.js.map",
+    "static/js/2.088cab0d.chunk.js": "/roda-dagar/static/js/2.088cab0d.chunk.js",
+    "static/js/2.088cab0d.chunk.js.map": "/roda-dagar/static/js/2.088cab0d.chunk.js.map",
     "index.html": "/roda-dagar/index.html",
-    "precache-manifest.16b4365e5728cc4722878c73d7048ea7.js": "/roda-dagar/precache-manifest.16b4365e5728cc4722878c73d7048ea7.js",
+    "precache-manifest.278fc804b99d11640dd147d3abd68146.js": "/roda-dagar/precache-manifest.278fc804b99d11640dd147d3abd68146.js",
     "service-worker.js": "/roda-dagar/service-worker.js",
     "static/css/2.d9ad5f5c.chunk.css.map": "/roda-dagar/static/css/2.d9ad5f5c.chunk.css.map",
-    "static/css/main.ec029080.chunk.css.map": "/roda-dagar/static/css/main.ec029080.chunk.css.map",
-    "static/js/2.3386554b.chunk.js.LICENSE.txt": "/roda-dagar/static/js/2.3386554b.chunk.js.LICENSE.txt"
+    "static/css/main.45ba2832.chunk.css.map": "/roda-dagar/static/css/main.45ba2832.chunk.css.map",
+    "static/js/2.088cab0d.chunk.js.LICENSE.txt": "/roda-dagar/static/js/2.088cab0d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.1cc78bcd.js",
     "static/css/2.d9ad5f5c.chunk.css",
-    "static/js/2.3386554b.chunk.js",
-    "static/css/main.ec029080.chunk.css",
-    "static/js/main.1295e83d.chunk.js"
+    "static/js/2.088cab0d.chunk.js",
+    "static/css/main.45ba2832.chunk.css",
+    "static/js/main.7d5caf0e.chunk.js"
   ]
 }

@@ -41,10 +41,6 @@ export const getStaticDates = (year) => [
     name: 'Nationaldagen',
   },
   {
-    date: new Date(year + '-10-31'),
-    name: 'Alla helgons dag',
-  },
-  {
     date: new Date(year + '-12-24'),
     name: 'Julafton',
     notReallyRed: true,

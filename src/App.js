@@ -75,6 +75,25 @@ const getMidsummerDays = (year) => {
   }
 };
 
+const getAllHallowsDays = (year) => {
+  return ['10-31', '11-01', '11-02', '11-03', '11-04', '11-05', '11-06']
+    .map((date) => new Date(year + '-' + date))
+    .filter((date) => date.getDay() === 6)
+    .map((date) => {
+      return [
+        {
+          name: 'Alla helgons afton',
+          date: new Date(date.getTime() - oneDay),
+          notReallyRed: true,
+        },
+        {
+          name: 'Alla helgons dag',
+          date,
+        },
+      ];
+    })[0];
+};
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -89,6 +108,7 @@ class App extends Component {
       ...getStaticDates(this.state.selectedYear),
       ...getEasterBasedDays(this.state.selectedYear),
       ...getMidsummerDays(this.state.selectedYear),
+      ...getAllHallowsDays(this.state.selectedYear),
     ];
 
     return dates
@@ -138,8 +158,9 @@ class App extends Component {
                     this.state.showPastDates ||
                     this.state.selectedYear !== new Date().getFullYear()
                 )
-                .map((day) => (
+                .map((day, index) => (
                   <div
+                    key={index}
                     className={
                       'day-container d-flex position-relative mb-2 text-left ' +
                       (day.notReallyRed

@@ -33,6 +33,10 @@ export const getStaticDates = (year) => [
     name: 'Trettondedag jul',
   },
   {
+    date: new Date(year + '-04-30'),
+    name: 'Valborgsmässoafton',
+  },
+  {
     date: new Date(year + '-05-01'),
     name: 'Första maj',
   },

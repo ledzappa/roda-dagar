@@ -181,6 +181,7 @@ class App extends Component {
                     <div className="day-name">{day.dayName?.substr(0, 3)}</div>
                   </div>
                 ))}
+                <div className="footer mt-3">rodadagar.nu visar röda dagar, semi-röda dagar och klämdagar.</div>
             </div>
           </div>
         </div>

@@ -9,6 +9,10 @@ body {
   font-family: 'Open Sans', sans-serif !important;
 }
 
+.footer {
+  color: #999;
+}
+
 .day-container {
   border: 1px solid #000;
 }

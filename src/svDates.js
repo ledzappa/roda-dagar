@@ -35,6 +35,7 @@ export const getStaticDates = (year) => [
   {
     date: new Date(year + '-04-30'),
     name: 'Valborgsmässoafton',
+    notReallyRed: true,
   },
   {
     date: new Date(year + '-05-01'),

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import { svDays, svMonthAbbr, getStaticDates } from './svDates';
 import Header from './components/Header';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 const oneDay = 86400000;
 
@@ -78,6 +80,7 @@ class App extends Component {
     super(props);
     this.state = {
       selectedYear: new Date().getFullYear(),
+      showPastDates: false,
     };
   }
 
@@ -112,9 +115,29 @@ class App extends Component {
         ></Header>
         <div className="container pt-4">
           <div className="row">
-            <div className="col-12 p-0">
+            <div className="col-12 p-0 text-center">
+              {this.state.selectedYear === new Date().getFullYear() ? (
+                <div
+                  className="d-inline-block text-right clickable mb-2"
+                  onClick={() =>
+                    this.setState({ showPastDates: !this.state.showPastDates })
+                  }
+                >
+                  <FontAwesomeIcon
+                    icon={this.state.showPastDates ? faEyeSlash : faEye}
+                  />
+                  {this.state.showPastDates ? ' Dölj' : ' Visa'} tidigare datum
+                </div>
+              ) : (
+                ''
+              )}
               {this.getAllDates()
-                // .filter((day) => day.date > new Date())
+                .filter(
+                  (day) =>
+                    day.date > new Date() ||
+                    this.state.showPastDates ||
+                    this.state.selectedYear !== new Date().getFullYear()
+                )
                 .map((day) => (
                   <div
                     className={
@@ -123,7 +146,8 @@ class App extends Component {
                         ? 'gray'
                         : day.isSqueezeDay
                         ? 'squeeze'
-                        : 'red')
+                        : 'red') +
+                      (day.date < new Date() ? ' past-date' : '')
                     }
                   >
                     <div className="text-center date-box mr-2">

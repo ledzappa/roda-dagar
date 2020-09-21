@@ -28,6 +28,10 @@ body {
   color: #000;
 }
 
+.day-container.past-date {
+  opacity: 0.5;
+}
+
 .date-box {
   width: 5rem;
   height: 5rem;
@@ -53,6 +57,10 @@ body {
   padding: 0.2rem;
   font-size: 1.1rem;
   text-transform: uppercase;
+}
+
+.clickable {
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 480px) {
